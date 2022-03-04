@@ -1,0 +1,27 @@
+﻿CREATE TABLE [adi].[Amerigroup_HCC-OPP] (
+    [Amerigroup_HCC-OPPKey]   INT            IDENTITY (1, 1) NOT NULL,
+    [OriginalFileName]        VARCHAR (100)  NOT NULL,
+    [SrcFileName]             VARCHAR (100)  NOT NULL,
+    [LoadDate]                DATE           NOT NULL,
+    [CreatedDate]             DATETIME       CONSTRAINT [DF_Amerigroup_HCC-OPP1] DEFAULT (getdate()) NULL,
+    [DataDate]                DATE           NOT NULL,
+    [FileDate]                DATE           NOT NULL,
+    [CreatedBy]               VARCHAR (50)   CONSTRAINT [DF_Amerigroup_HCC-OPP2] DEFAULT (suser_sname()) NOT NULL,
+    [LastUpdatedDate]         DATETIME       CONSTRAINT [DF_Amerigroup_HCC-OPP3] DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]           VARCHAR (50)   CONSTRAINT [DF_Amerigroup_HCC-OPP4] DEFAULT (suser_sname()) NOT NULL,
+    [MCID_MASTER_CONSUMER_ID] BIGINT         NULL,
+    [PG_ID]                   VARCHAR (32)   NULL,
+    [PGM_ID]                  VARCHAR (32)   NULL,
+    [Panel_ID]                VARCHAR (32)   NULL,
+    [HCCChronicIndicator]     VARCHAR (5)    NULL,
+    [ModelVersion]            VARCHAR (10)   NULL,
+    [HCCNum]                  VARCHAR (10)   NULL,
+    [HCCDescription]          VARCHAR (100)  NULL,
+    [ICD10Code]               VARCHAR (10)   NULL,
+    [ICD10CodeDescription]    VARCHAR (2000) NULL,
+    [HCCStatus]               VARCHAR (10)   NULL,
+    [RiskFactorCoefficient]   DECIMAL (9, 3) NULL,
+    [HCCPaymentYear]          INT            NULL,
+    PRIMARY KEY CLUSTERED ([Amerigroup_HCC-OPPKey] ASC)
+);
+
